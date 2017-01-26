@@ -1,0 +1,16 @@
+@import "base/_typography";
+body
+{
+
+  background-color: #F7F7F7;
+  &.authenticate{
+    @import "views/authenticate";
+  }
+}
+
+.block{
+  display: block;
+}
+.center-text{
+  text-align: center;
+}
