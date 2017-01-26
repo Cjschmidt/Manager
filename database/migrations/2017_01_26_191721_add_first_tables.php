@@ -40,20 +40,6 @@ class AddFirstTables extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-
-        Schema::create('administrators', function(Blueprint $table)
-        {
-            $table->increments('id');
-            $table->integer('role')->default(1);
-            $table->string('email')->unique();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('password', 60);
-            $table->integer('language_id')->unsigned();
-            $table->rememberToken();
-            $table->timestamps();
-            $table->softDeletes();
-        });
     }
 
     /**

@@ -14,14 +14,15 @@
 
 
 //login handling
-Route::get('/', 'Auth\LoginController@getLogin');
+Route::get('/login', 'Auth\LoginController@getLogin');
 Route::post('/login', 'Auth\LoginController@postLogin');
+
+
 
 
 //Authenticated
 Route::group(['middleware' => 'auth'], function(){
-    Route::get('/dashboard', function(){
-        var_dump('success');
-    });
+
+    Route::get('/dashboard', 'DashboardController@getDashboard');
 
 });

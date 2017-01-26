@@ -1,0 +1,32 @@
+.dashboard-container{
+  .overview-container{
+    .overview{
+      .wrap{
+        background-color: white;
+        padding: 30px;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 1px rgba(0,0,0,.05);
+        transition: all 300ms;
+        cursor: pointer;
+        .icon{
+          display: block;
+          width: 100%;
+          text-align: center;
+          font-size: 80px;
+          .icon-border{
+            display: inline-block;
+            padding: 34px;
+            border: 2px solid #333;
+            border-radius: 50%;
+          }
+        }
+        &:hover{
+          box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+
+
+        }
+      }
+
+    }
+  }
+}

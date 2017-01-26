@@ -25,6 +25,7 @@
                 <div class="btn-primary" id="login">
                     @lang('login.login')
                 </div>
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
             </form>
         </div>
 
@@ -35,7 +36,8 @@
 @section('scripts')
     <script>
         var messages = {
-            'login_validation_error' : "@lang('login.login_validation_error')"
+            'login_validation_error' : "@lang('login.login_validation_error')",
+            'login_no_rights' : "@lang('login.login_no_rights')"
         }
     </script>
     <script type="text/javascript" src="/assets/js/views/authenticate/login.min.js"></script>

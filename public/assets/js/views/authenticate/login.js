@@ -7,22 +7,60 @@ $(document).ready(function () {
 function login() {
 
     call('login', 'POST', 'json', '/login', $('#login_form').serialize(),
-        function (json) {
+        function (json)
+        {
             $('.icon-wrapper').addClass('success');
-            setTimeout(function(){
-                window.location ='/dashboard';
-            },100)
+
+            if(json.success)
+            {
+                setTimeout(function(){
+                    window.location ='/dashboard';
+                },100)
+            }
+            else
+            {
+                if(json.not_admin)
+                {
+                    buildnotification(messages.login_no_rights,'danger', false);
+
+                }
+                else
+                {
+                    buildnotification(messages.login_validation_error,'danger', false);
+                }
+            }
 
         },
-        function (json) {
+        function (json)
+        {
+            if(json.success)
+            {
+                setTimeout(function()
+                {
+                    window.location ='/dashboard';
+                },100)
+            }
+            else
+            {
+                if(json.not_admin)
+                {
+                    buildnotification(messages.login_no_rights,'danger', false);
 
+                }
+                else
+                {
+                    buildnotification(messages.login_validation_error,'danger', false);
+                }
+            }
         },
-        function(json){
+        function(json)
+        {
 
             buildnotification(messages.login_validation_error,'danger', false);
 
         },
-        function(json){
+        function(json)
+        {
 
         });
 
